@@ -1,0 +1,40 @@
+/* FloatingPokemon.css */
+.floating-pokemon {
+  position: fixed; /* or absolute, depending on desired behavior */
+  bottom: 50px; /* Adjust starting position */
+  right: -100px; /* Start off-screen to the right */
+  width: 100px; /* Slightly bigger initial size */
+  height: 100px; /* Slightly bigger initial size */
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1000; /* Ensure it floats above other content */
+  animation: flyAcross 10s linear forwards; /* Animation duration and fill mode */
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1.2); /* Start bigger */
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-25vw) translateY(-20px) rotate(-5deg) scale(1.0);
+  }
+  50% {
+    transform: translateX(-50vw) translateY(20px) rotate(5deg) scale(0.8);
+  }
+  75% {
+    transform: translateX(-75vw) translateY(-20px) rotate(-5deg) scale(0.6);
+  }
+  100% {
+    transform: translateX(-110vw) translateY(0) rotate(0deg) scale(0); /* End smaller and fade out */
+    opacity: 0; /* Fade out at the end */
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-pokemon {
+    width: 80px;
+    height: 80px;
+    bottom: 20px;
+  }
+}
