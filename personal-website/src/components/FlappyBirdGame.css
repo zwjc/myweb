@@ -1,0 +1,13 @@
+/* FlappyBirdGame.css */
+.flappy-bird-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  background-color: #87CEEB; /* Sky blue background */
+}
+
+canvas {
+  background-color: #87CEEB;
+  border: 2px solid #333;
+}

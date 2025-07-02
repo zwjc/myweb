@@ -1,0 +1,70 @@
+/* Projects.css */
+.projects-container {
+  min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e2e5;
+  color: #333;
+  padding: 20px;
+}
+
+.projects-container h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for cards */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-end; /* Align overlay to the bottom */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition */
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Pop up effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+.project-card-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly see-through background */
+  color: white;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.project-card-overlay h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.project-card-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,71 @@
+/* CV.css */
+.cv-container {
+  min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #d0d2d5;
+  color: #333;
+  padding: 20px;
+}
+
+.cv-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.cv-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.cv-section h2 {
+  color: #282c34;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.cv-section h3 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.cv-section p, .cv-section ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cv-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .cv-section {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .cv-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .cv-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .cv-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .cv-section p, .cv-section ul {
+    font-size: 1rem;
+  }
+}
