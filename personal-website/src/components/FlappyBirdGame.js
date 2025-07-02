@@ -11,15 +11,15 @@ const FlappyBirdGame = () => {
     y: 150,
     radius: 12,
     velocity: 0,
-    gravity: 0.5,
-    jump: -8,
+    gravity: 0.2, // Reduced gravity
+    jump: -5, // Smoother jump
   });
 
   const pipes = useRef([]);
   const pipeWidth = 40;
-  const pipeGap = 120;
-  const pipeSpeed = 2;
-  const pipeInterval = 1500; // milliseconds
+  const pipeGap = 180; // Increased gap
+  const pipeSpeed = 1.5; // Slightly slower pipe speed
+  const pipeInterval = 2000; // milliseconds (increased interval for more reaction time)
 
   const gameLoopRef = useRef();
   const lastPipeTimeRef = useRef(0);
@@ -65,6 +65,9 @@ const FlappyBirdGame = () => {
     if (bird.current.y + bird.current.radius > ctx.canvas.height) {
       bird.current.y = ctx.canvas.height - bird.current.radius;
       setGameOver(true);
+      if (gameLoopRef.current) {
+        cancelAnimationFrame(gameLoopRef.current);
+      }
     }
     // Ceiling collision
     if (bird.current.y - bird.current.radius < 0) {
@@ -99,6 +102,9 @@ const FlappyBirdGame = () => {
         )
       ) {
         setGameOver(true);
+        if (gameLoopRef.current) {
+          cancelAnimationFrame(gameLoopRef.current);
+        }
       }
 
       // Score
@@ -125,8 +131,8 @@ const FlappyBirdGame = () => {
       y: 150,
       radius: 12,
       velocity: 0,
-      gravity: 0.5,
-      jump: -8,
+      gravity: 0.2,
+      jump: -5,
     };
     pipes.current = [];
     setScore(0);
@@ -177,6 +183,11 @@ const FlappyBirdGame = () => {
   return (
     <div className="flappy-bird-container">
       <canvas ref={canvasRef} width="400" height="300"></canvas>
+      {gameOver && (
+        <button className="restart-button" onClick={() => resetGame(canvasRef.current.getContext('2d'))}>
+          Restart Game
+        </button>
+      )}
     </div>
   );
 };
