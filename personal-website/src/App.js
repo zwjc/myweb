@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import CV from './components/CV';
-import FlappyBirdGame from './components/FlappyBirdGame'; // Import the new FlappyBirdGame component
+import FlappyBirdGame from './components/FlappyBirdGame';
+import About from './components/About'; // Import the new About component
 import './App.css';
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
               <Link to="/projects" className="nav-link">Projects</Link>
             </li>
             <li className="nav-item">
-              <Link to="/cv" className="nav-link">CV</Link>
+              <Link to="/flappybird" className="nav-link">Flappy Bird</Link>
             </li>
             <li className="nav-item">
-              <Link to="/flappybird" className="nav-link">Flappy Bird</Link>
+              <Link to="/about" className="nav-link">About</Link>
             </li>
           </ul>
         </nav>
@@ -30,8 +30,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/cv" element={<CV />} />
-          <Route path="/flappybird" element={<FlappyBirdGame />} /> {/* Add the new FlappyBirdGame route */}
+          <Route path="/flappybird" element={<FlappyBirdGame />} />
+          <Route path="/about" element={<About />} /> {/* Add the new About route */}
         </Routes>
       </div>
     </Router>

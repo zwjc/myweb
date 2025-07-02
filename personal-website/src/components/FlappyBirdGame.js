@@ -43,7 +43,7 @@ const FlappyBirdGame = () => {
     // Draw score
     ctx.fillStyle = 'white';
     ctx.font = '20px Arial';
-    ctx.fillText(`Score: ${score}`, 10, 25);
+    ctx.fillText(`This is a work in progress: ${score}`, 10, 25);
 
     if (gameOver) {
       ctx.fillStyle = 'red';
