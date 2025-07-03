@@ -23,8 +23,8 @@ function Projects() {
       link: '#'
     },
     {
-      title: 'Ecommerce Website',
-      description: 'A project where I developed a full-stack ecommerce website using React, Node.js, and MongoDB, implementing features like user authentication, product management, and payment processing.',
+      title: 'E-Commerce Website',
+      description: 'A project where I developed a full-stack e-commerce website using React, Node.js, and Supabase, implementing features like user authentication, product management, and payment processing.',
       image: '/pictures/project4.png',
       link: 'https://homeearths.com/'
     },
