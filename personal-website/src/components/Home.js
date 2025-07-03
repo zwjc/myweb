@@ -37,7 +37,7 @@ function Home() {
             <p><Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} /></p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-3">
-            <p>See what I have worked on, my CV or play a fun game!</p>
+            <p>See what I have worked on, a bit more about me or play a fun game!</p>
           </ScrollAnimationWrapper>
         </div>
       </div>

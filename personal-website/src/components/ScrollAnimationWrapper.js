@@ -28,7 +28,7 @@ const ScrollAnimationWrapper = ({ children, animationClass }) => {
   }, []);
 
   return (
-    <div ref={ref} className={isVisible ? animationClass : ''}>
+    <div ref={ref} className={`${animationClass} ${isVisible ? 'is-visible' : ''}`}>
       {children}
     </div>
   );

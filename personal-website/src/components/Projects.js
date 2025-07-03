@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 import './Projects.css';
 
 function Projects() {
@@ -40,16 +41,17 @@ function Projects() {
       <h1>My Projects</h1>
       <div className="project-cards-grid">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-card"
-            style={{ backgroundImage: `url(${project.image})` }}
-          >
-            <div className="project-card-overlay">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
+          <ScrollAnimationWrapper key={index} animationClass="fade-in-up" delay={index * 0.1}>
+            <div
+              className="project-card"
+              style={{ backgroundImage: `url(${project.image})` }}
+            >
+              <div className="project-card-overlay">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </div>
             </div>
-          </div>
+          </ScrollAnimationWrapper>
         ))}
       </div>
     </div>
