@@ -5,33 +5,33 @@ import './Projects.css';
 function Projects() {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A brief description of Project One. This project showcases my skills in X, Y, and Z.',
+      title: 'Unity3D Game Development',
+      description: 'A project involving the development of a football game with powerups, AI opponents, and multiplayer functionality using Unity3D and C#.',
       image: 'https://via.placeholder.com/400x250/FF5733/FFFFFF?text=Project+1'
     },
     {
-      title: 'Project Two',
-      description: 'A brief description of Project Two. This project involved building A, B, and C.',
+      title: 'Dynamic Web Application',
+      description: 'A project in frontend development and interaction programming using React and JavaScript and a ChatGPT and Pokemon API integration.',
       image: 'https://via.placeholder.com/400x250/33FF57/FFFFFF?text=Project+2'
     },
     {
-      title: 'Project Three',
-      description: 'A brief description of Project Three. I learned about D, E, and F while working on this.',
+      title: 'Old and Current Website',
+      description: 'This and the previous website made for fun and personal use.',
       image: 'https://via.placeholder.com/400x250/3357FF/FFFFFF?text=Project+3'
     },
     {
-      title: 'Project Four',
-      description: 'A brief description of Project Four. This was a challenging project that taught me G, H, and I.',
+      title: 'Ecommerce Website',
+      description: 'A project where I developed a full-stack ecommerce website using React, Node.js, and MongoDB, implementing features like user authentication, product management, and payment processing.',
       image: 'https://via.placeholder.com/400x250/F333FF/FFFFFF?text=Project+4'
     },
     {
-      title: 'Project Five',
-      description: 'A brief description of Project Five. I enjoyed developing J, K, and L for this project.',
+      title: 'Bachelor Thesis Project',
+      description: 'My bachelor thesis project focused on the comparative analysis of different quantization algorithms for image classification, where we implemented and tested various models to determine their effectiveness.',
       image: 'https://via.placeholder.com/400x250/FFC300/FFFFFF?text=Project+5'
     },
     {
-      title: 'Project Six',
-      description: 'A brief description of Project Six. This project demonstrates my proficiency in M, N, and O.',
+      title: 'AI Model Creation',
+      description: 'A hobby project where I created an AI model to generate images based on text prompts.',
       image: 'https://via.placeholder.com/400x250/C70039/FFFFFF?text=Project+6'
     },
   ];

@@ -71,6 +71,10 @@
   transition-delay: 0.6s;
 }
 
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
 @media (max-width: 768px) {
   .about-section {
     width: 95%;
