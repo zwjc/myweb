@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import FlappyBirdGame from './components/FlappyBirdGame';
 import About from './components/About';
 import './App.css';
 
@@ -22,7 +21,7 @@ function App() {
               <Link to="/about" className="nav-link">About</Link>
             </li>
             <li className="nav-item">
-              <Link to="/flappybird" className="nav-link">Game :o</Link>
+              <a href="https://wordle-b3r.pages.dev/" className="nav-link" target="_blank" rel="noopener noreferrer">Games!</a>
             </li>
           </ul>
         </nav>
@@ -30,7 +29,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/flappybird" element={<FlappyBirdGame />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
