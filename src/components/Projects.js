@@ -35,10 +35,10 @@ function Projects() {
       link: 'https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1887665&dswid=9194'
     },
     {
-      title: 'AI Model Creation',
-      description: 'A hobby project where I created an AI model to generate images based on text prompts.',
-      image: '/pictures/project6.jpg',
-      link: 'https://github.com/zwjc'
+      title: 'Dinner Planner App',
+      description: 'A hobby project where I created an app to help users plan their dinners, recipes and shopping lists, utilizing React Native for mobile development and MealDB API.',
+      image: '/pictures/project6.PNG',
+      link: 'https://github.com/zwjc/Expo'
     },
   ];
 
