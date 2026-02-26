@@ -21,7 +21,7 @@ function App() {
               <Link to="/about" className="nav-link">About</Link>
             </li>
             <li className="nav-item">
-              <a href="https://games.jeffreychang.org/" className="nav-link" target="_blank" rel="noopener noreferrer">Games</a>
+              <a href="/cv.pdf" className="nav-link" target="_blank" rel="noopener noreferrer">CV</a>
             </li>
           </ul>
         </nav>
