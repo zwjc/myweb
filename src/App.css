@@ -1,3 +1,7 @@
+:root {
+  --navbar-height: 60px;
+}
+
 .navbar {
   background-color: #05070a;
   padding: 1rem 2rem;
@@ -5,6 +9,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  min-height: var(--navbar-height);
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   border-bottom: 1px solid rgba(42, 82, 190, 0.1); /* Subtle Cobalt border */
 }
 
@@ -52,11 +62,25 @@
 }
 
 @media (max-width: 768px) {
+  :root {
+    --navbar-height: 50px;
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
   .nav-list {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-item {
-    margin: 15px 0;
+    margin: 5px 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 }

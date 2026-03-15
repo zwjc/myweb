@@ -23,7 +23,7 @@ function Home() {
       <FloatingPokemon />
       
       <div className="home-content">
-        <ScrollAnimationWrapper animationClass="fade-in-up">
+        <ScrollAnimationWrapper animationClass="fade-in-up home-image-wrapper">
           <img src="/pictures/i.jpg" alt="Jeffrey Chang" className="home-image" />
         </ScrollAnimationWrapper>
         

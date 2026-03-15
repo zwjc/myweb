@@ -1,6 +1,6 @@
 /* About.css */
 .about-container {
-  min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+  min-height: calc(100vh - var(--navbar-height)); /* Adjust based on navbar height */
   display: flex;
   flex-direction: column;
   align-items: center;
