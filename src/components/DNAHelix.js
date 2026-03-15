@@ -30,7 +30,7 @@ const DNAHelix = () => {
     const instanceCount = 30000;
     const sphereGeometry = new THREE.SphereGeometry(0.09, 6, 6); 
     const material = new THREE.MeshPhysicalMaterial({
-      color: 0x007a7a,
+      color: 0x97c7c7,
       emissive: 0x001111,
       metalness: 0.5,
       roughness: 0.1,
