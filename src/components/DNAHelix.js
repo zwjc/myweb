@@ -20,20 +20,20 @@ const DNAHelix = () => {
     renderer.setClearColor(0x000000, 0); 
     mount.appendChild(renderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2); 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8); 
     scene.add(ambientLight);
 
-    const mainLight = new THREE.DirectionalLight(0xffffff, 2.5);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.8);
     mainLight.position.set(10, 10, 20);
     scene.add(mainLight);
 
-    const instanceCount = 30000;
+    const instanceCount = 15000;
     const sphereGeometry = new THREE.SphereGeometry(0.09, 6, 6); 
     const material = new THREE.MeshPhysicalMaterial({
       color: 0x97c7c7,
-      emissive: 0x001111,
-      metalness: 0.5,
-      roughness: 0.1,
+      emissive: 0x051111,
+      metalness: 0.4,
+      roughness: 0.2,
       clearcoat: 1.0,
       transparent: true,
       opacity: 0.9,
@@ -109,8 +109,8 @@ const DNAHelix = () => {
 
     const bokehPass = new BokehPass(scene, camera, {
       focus: 32.0,
-      aperture: 0.0001,
-      maxblur: 0.01,
+      aperture: 0.00001,
+      maxblur: 0.002,
       width: window.innerWidth,
       height: window.innerHeight
     });
