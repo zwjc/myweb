@@ -39,7 +39,7 @@ function Home() {
             <p>I'm a Cybersecurity Consultant <Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} /></p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-4">
-            <p>See what I have worked on, a bit more about me or play a fun game!</p>
+            <p>See what I have worked on or learn a bit more about me!</p>
           </ScrollAnimationWrapper>
         </div>
       </div>
