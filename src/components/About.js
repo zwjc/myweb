@@ -27,6 +27,13 @@ function About() {
       <ScrollAnimationWrapper animationClass="fade-in-up delay-2">
         <section className="about-section">
           <h2>Experience</h2>
+          <h3>Cybersecurity Consultant @ EY FSO</h3>
+          <p><em>August 2026 - Present</em></p>
+          <ul>
+            <li>Responsible for providing cybersecurity consulting services to clients across various industries.</li>
+            <li>Conducting security assessments, vulnerability testing, and risk analysis to identify potential threats and vulnerabilities.</li>
+            <li>Developing and implementing security strategies and solutions to mitigate risks and enhance overall cybersecurity posture for financial institutions.</li>
+          </ul>
           <h3>Project Manager @ THS Armada</h3>
           <p><em>January 2024 - January 2025</em></p>
           <ul>
