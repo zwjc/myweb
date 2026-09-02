@@ -1,5 +1,5 @@
 import React from 'react';
-import DNAHelix from './DNAHelix'; // Import the 3D Helix
+import DNAHelix from './DNAHelix';
 import Typewriter from './Typewriter';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 import FloatingPokemon from './FloatingPokemon';
@@ -18,9 +18,7 @@ function Home() {
 
   return (
     <div className="home-container">
-
       <DNAHelix />
-      
       <FloatingPokemon />
       
       <div className="home-content">
@@ -36,7 +34,10 @@ function Home() {
             <h2>Welcome to my personal website!</h2>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-3">
-            <p>I'm a Cybersecurity Consultant <Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} /></p>
+            <p>
+              <span className="consultant-intro">I'm a Cybersecurity Consultant</span>
+              <Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} />
+            </p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-4">
             <p>See what I have worked on or learn a bit more about me!</p>
