@@ -49,10 +49,20 @@ function About() {
         <ScrollAnimationWrapper animationClass="fade-in-up" delay={0.2}>
           <section className="about-card">
             <h2>Education</h2>
-            
             <div className="timeline-item">
-              <h3>KTH - Master of Science in Engineering (Civilingenjör)</h3>
-              <p className="timeline-subtitle">Information Technology and Industrial Management</p>
+                <div className="timeline-header">
+                <h3>Karolinska Institutet</h3>
+                <p className="timeline-subtitle">Candidate for Doctor of Medicine (M.D.)</p>
+                  <span className="timeline-date">VT 2026</span>
+                </div>
+                <ul>
+                  <li>Undertaken foundational medical studies.</li>
+                </ul>
+              </div>
+
+            <div className="timeline-item">
+              <h3>Kungliga Tekniska Högskolan</h3>
+              <p className="timeline-subtitle">Master of Science in Engineering (Civilingenjör)</p>
               <p className="timeline-date">Graduation Date: May 2026</p>
               <ul>
                 <li>Relevant coursework: Leading People & Organisations, Project Management, Production & Supply Chain, Finance & Control, Industrial Transformation, and Strategy.</li>
@@ -60,10 +70,11 @@ function About() {
             </div>
 
             <div className="timeline-item">
-              <h3>KTH - BSc Information and Communication Technology</h3>
+              <h3>Kungliga Tekniska Högskolan</h3>
+              <p className="timeline-subtitle">Bachelor of Science in Engineering</p>
               <p className="timeline-date">Graduation Date: May 2024</p>
               <ul>
-                <li>Relevant coursework: Data Structures, Algorithms, Web Development, Computer Hardware Engineering, Single & Multi-Variable Calculus, and Operating Systems.</li>
+                <li>Relevant coursework: Data Structures, Algorithms, Probability Theory & Statistics, Computer Engineering, Single & Multi-Variable Calculus, Linear Algebra, and Operating Systems.</li>
               </ul>
             </div>
           </section>
