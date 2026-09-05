@@ -77,6 +77,16 @@ function About() {
                 <li>Relevant coursework: Data Structures, Algorithms, Probability Theory & Statistics, Computer Engineering, Single & Multi-Variable Calculus, Linear Algebra, and Operating Systems.</li>
               </ul>
             </div>
+
+            <div className="timeline-item">
+              <h3>International Baccalaureate</h3>
+              <p className="timeline-subtitle">Diploma Programme</p>
+              <p className="timeline-date">Graduation Date: May 2020</p>
+              <ul>
+                <li>Higher Level: Mathematics, Physics, Chemistry</li>
+                <li>Standard Level: English, Spanish, History</li>
+              </ul>
+            </div>
           </section>
         </ScrollAnimationWrapper>
       </div>
