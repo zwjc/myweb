@@ -4,11 +4,14 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import About from './components/About';
 import './App.css';
+import AmbientBackground from './components/AmbientBackground';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <AmbientBackground />
+
         <nav className="navbar">
           <ul className="nav-list">
             <li className="nav-item">

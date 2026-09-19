@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: transparent; /* Changed from #05070a */
+  color: #f4f4f6;
   padding: 60px 20px;
 }
 
@@ -19,11 +19,12 @@
   font-size: 2.5rem;
   margin-bottom: 15px;
   font-weight: 800;
+  color: #f4f4f6;
 }
 
 .projects-header p {
   font-size: 1.125rem;
-  color: #475569;
+  color: #9ba1a6;
 }
 
 .project-cards-grid {
@@ -83,20 +84,20 @@
 }
 
 .project-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: #19191c;
+  border: 1px solid #2e2e34;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .project-image-wrapper {
@@ -104,8 +105,8 @@
   height: 180px;
   flex-shrink: 0;
   overflow: hidden;
-  background-color: #f1f5f9;
-  border-bottom: 1px solid #e2e8f0;
+  background-color: #232327;
+  border-bottom: 1px solid #2e2e34;
 }
 
 /* Give larger bento items more space for their images */
@@ -137,7 +138,7 @@
 .project-content h3 {
   font-size: 1.25rem;
   margin: 0 0 12px 0;
-  color: #0f172a;
+  color: #f4f4f6;
   transition: color 0.3s ease;
 }
 
@@ -147,7 +148,7 @@
 
 .project-content p {
   font-size: 0.875rem;
-  color: #475569;
+  color: #9ba1a6;
   line-height: 1.6;
   margin: 0;
 }
@@ -161,8 +162,9 @@
 }
 
 .tag-pill {
-  background-color: #f1f5f9;
-  color: #334155;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f4f4f6;
+  border: 1px solid #2e2e34;
   font-size: 0.75rem;
   font-weight: 500;
   padding: 4px 12px;

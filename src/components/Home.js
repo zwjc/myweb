@@ -31,7 +31,7 @@ function Home() {
             <h1>Jeffrey Chang</h1>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-2">
-            <h2>Welcome to my personal website!</h2>
+            <h2>Welcome to my website!</h2>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper animationClass="fade-in-up delay-3">
             <p>
@@ -39,9 +39,7 @@ function Home() {
               <Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} />
             </p>
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper animationClass="fade-in-up delay-4">
-            <p>See what I have worked on or learn a bit more about me!</p>
-          </ScrollAnimationWrapper>
+
         </div>
       </div>
     </div>

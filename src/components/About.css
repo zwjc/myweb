@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: transparent; /* Changed from #05070a */
+  color: #f4f4f6;
   padding: 60px 20px;
 }
 
@@ -18,7 +18,7 @@
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 800;
-  color: #0f172a;
+  color: #f4f4f6;
 }
 
 .social-links {
@@ -39,7 +39,7 @@
 
 .social-links i {
   font-size: 2.5rem;
-  color: #0f172a; /* Slate-900 to match the text */
+  color: #f4f4f6;
 }
 
 .social-links a:first-child i {
@@ -55,26 +55,26 @@
 }
 
 .about-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: #19191c;
+  border: 1px solid #2e2e34;
   border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .about-card h2 {
   font-size: 1.75rem;
-  color: #0f172a;
+  color: #f4f4f6;
   margin-top: 0;
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f1f5f9;
+  border-bottom: 2px solid #2e2e34;
   font-weight: 700;
 }
 
@@ -88,14 +88,14 @@
 
 .timeline-item h3 {
   font-size: 1.25rem;
-  color: #0f172a;
+  color: #f4f4f6;
   margin: 0 0 4px 0;
   font-weight: 600;
 }
 
 .timeline-subtitle {
   font-size: 1rem;
-  color: #475569;
+  color: #9ba1a6;
   font-weight: 500;
   margin: 0 0 4px 0;
 }
@@ -117,7 +117,7 @@
 
 .timeline-item ul li {
   font-size: 1rem;
-  color: #475569;
+  color: #9ba1a6;
   line-height: 1.6;
   margin-bottom: 8px;
   position: relative;

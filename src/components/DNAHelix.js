@@ -20,23 +20,25 @@ const DNAHelix = () => {
     renderer.setClearColor(0x000000, 0); 
     mount.appendChild(renderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8); 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // Dimmer ambient light
     scene.add(ambientLight);
 
-    const mainLight = new THREE.DirectionalLight(0xffffff, 1.8);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.0); // Dimmer main light
     mainLight.position.set(10, 10, 20);
     scene.add(mainLight);
 
     const instanceCount = 15000;
     const sphereGeometry = new THREE.SphereGeometry(0.09, 6, 6); 
+    
+    // Updated material for a dull, lowkey, faded appearance
     const material = new THREE.MeshPhysicalMaterial({
-      color: 0x97c7c7,
-      emissive: 0x051111,
-      metalness: 0.4,
-      roughness: 0.2,
-      clearcoat: 1.0,
+      color: 0x446677, // Muted starting color
+      emissive: 0x111122, // Very subtle dark glow
+      metalness: 0.1, // Removed metallic shine
+      roughness: 0.8, // Duller, less reflective surface
+      clearcoat: 0.05, // Almost no gloss
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.35, // Very faded and ghostly
     });
 
     const instancedMesh = new THREE.InstancedMesh(sphereGeometry, material, instanceCount);
@@ -49,9 +51,7 @@ const DNAHelix = () => {
     const rungTubeRadius = 0.3;
 
     for (let i = 0; i < instanceCount; i++) {
-      // Logic: 75% for strands, 25% for rungs
       if (i < instanceCount * 0.75) {
-        // STRANDS
         const strandOffset = (i % 2 === 0) ? 0 : Math.PI;
         const t = Math.random() * twists * Math.PI * 2;
         const y = (t / (twists * Math.PI * 2)) * height - height / 2;
@@ -69,7 +69,6 @@ const DNAHelix = () => {
           bz + Math.sin(theta) * r
         );
       } else {
-        // RUNGS (The connections)
         const numRungs = 45;
         const rungIndex = i % numRungs;
         const t = (rungIndex / numRungs) * twists * Math.PI * 2;
@@ -143,6 +142,19 @@ const DNAHelix = () => {
       requestAnimationFrame(animate);
       instancedMesh.rotation.y += 0.002;
 
+      // Time-based shifting
+      const time = Date.now() * 0.0005;
+      
+      // Calculate the base hue (shifts between teals and purples)
+      const hue = 0.65 + Math.sin(time * 0.5) * 0.25; 
+      
+      // Apply FADED colors: setHSL(hue, saturation, lightness)
+      // Saturation is turned down to 0.25 to make it dull/greyish
+      material.color.setHSL(hue, 0.25, 0.35);
+      
+      // Keep the glowing emission extremely lowkey
+      material.emissive.setHSL(hue, 0.3, 0.5); 
+
       const basePosX = isMobile ? 0 : 18;
       const basePosY = isMobile ? 0 : 1;
       const targetX = basePosX + mouse.current.x * 1.5; 
@@ -176,7 +188,7 @@ const DNAHelix = () => {
     };
   }, [isMobile]);
 
-  return <div ref={mountRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: 0, pointerEvents: 'none' }} />;
+  return <div ref={mountRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: 1, pointerEvents: 'none' }} />;
 };
 
 export default DNAHelix;
