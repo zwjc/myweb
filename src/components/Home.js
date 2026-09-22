@@ -16,6 +16,8 @@ function Home() {
     " who gets paid to overthink everything."
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="home-container">
       <DNAHelix />
@@ -39,8 +41,11 @@ function Home() {
               <Typewriter texts={humorousTexts} delay={30} eraseDelay={15} newTextDelay={1000} />
             </p>
           </ScrollAnimationWrapper>
-
         </div>
+      </div>
+
+      <div className="home-footer">
+        <span className="footer-text">© {currentYear} JEFFREY CHANG // ALL RIGHTS RESERVED</span>
       </div>
     </div>
   );

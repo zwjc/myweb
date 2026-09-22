@@ -1,14 +1,15 @@
 /* Home.css */
 .home-container {
-  min-height: calc(100vh - var(--navbar-height, 60px));
+  /* Locks the height to the viewport minus the navbar, absolutely preventing scroll */
+  height: calc(100vh - var(--navbar-height, 60px));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #05070a;
-  color: #e0e6ed;
+  background-color: transparent; 
+  color: #f4f4f6;
   padding: 20px;
-  overflow-x: hidden;
+  overflow: hidden; 
   position: relative;
 }
 
@@ -25,11 +26,13 @@
 }
 
 .home-image {
-  width: 300px;
+  /* Uses clamp to fluidly scale down on smaller/shorter screens */
+  width: clamp(200px, 25vw, 300px); 
   height: auto;
   border-radius: 10px;
   margin: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .home-text-content {
@@ -37,26 +40,68 @@
   min-width: 300px;
   text-align: left;
   margin: 20px;
-  color: #ccd6f6;
+  color: #f4f4f6;
 }
 
 .home-container h1 {
-  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 10px;
+  color: #f4f4f6;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.home-container h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  color: #00f0ff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   margin-bottom: 20px;
-  color: #e6f1ff;
 }
 
 .home-container p {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   max-width: 800px;
   line-height: 1.6;
+  color: #9ba1a6;
 }
 
 .consultant-intro {
-  color: #8892b0;
+  color: #f4f4f6;
   font-weight: 400;
 }
 
+/* Minimalist Footer */
+.home-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeInFooter 1s ease-out 1.2s forwards;
+}
+
+.footer-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: #9ba1a6;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+@keyframes fadeInFooter {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll Animations */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -68,27 +113,17 @@
   transform: translateY(0);
 }
 
-.delay-1 {
-  transition-delay: 0.2s;
-}
-
-.delay-2 {
-  transition-delay: 0.4s;
-}
-
-.delay-3 {
-  transition-delay: 0.6s;
-}
-
-.delay-4 {
-  transition-delay: 0.8s;
-}
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
 
 @media (max-width: 768px) {
   .home-content {
     flex-direction: column;
     padding-left: 0;
     justify-content: center;
+    text-align: center;
   }
 
   .home-image-wrapper {
@@ -102,13 +137,5 @@
   .home-text-content {
     text-align: center;
     margin: 20px auto;
-  }
-
-  .home-container h1 {
-    font-size: 2.5rem;
-  }
-
-  .home-container p {
-    font-size: 1.2rem;
   }
 }
