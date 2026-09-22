@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent; /* Changed from #05070a */
+  background-color: transparent;
   color: #f4f4f6;
   padding: 60px 20px;
 }
@@ -43,7 +43,7 @@
 }
 
 .social-links a:first-child i {
-  color: #0077b5; /* Keeping LinkedIn's brand color */
+  color: #0077b5; 
 }
 
 .about-content {
@@ -54,18 +54,22 @@
   gap: 30px;
 }
 
+/* Glassmorphism applied to the card - Adjusted for better readability */
 .about-card {
-  background-color: #19191c;
-  border: 1px solid #2e2e34;
+  background-color: rgba(10, 12, 16, 0.75); 
+  backdrop-filter: blur(32px); 
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.08); 
   border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+  background-color: rgba(10, 12, 16, 0.85); 
 }
 
 .about-card h2 {
@@ -74,7 +78,7 @@
   margin-top: 0;
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #2e2e34;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08); 
   font-weight: 700;
 }
 
@@ -102,7 +106,7 @@
 
 .timeline-date {
   font-size: 0.875rem;
-  color: #0d9488; /* Teal color matching the project hover states */
+  color: #0d9488; 
   font-weight: 500;
   margin: 0 0 12px 0;
   text-transform: uppercase;
@@ -126,7 +130,7 @@
 
 .timeline-item ul li::before {
   content: "•";
-  color: #0d9488; /* Teal bullets */
+  color: #0d9488; 
   font-weight: bold;
   position: absolute;
   left: 0;
