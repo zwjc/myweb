@@ -9,6 +9,8 @@
   padding: 80px 20px;
   /* Override global typography for this section to force strict Swiss Sans-Serif */
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 10;
 }
 
 .projects-header {

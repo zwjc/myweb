@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
@@ -8,6 +9,14 @@ const DNAHelix = () => {
   const mountRef = useRef(null);
   const mouse = useRef({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+  // Track the current route to pause the animation when off-screen
+  const location = useLocation();
+  const activeRoute = useRef(location.pathname);
+
+  useEffect(() => {
+    activeRoute.current = location.pathname;
+  }, [location]);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -20,25 +29,25 @@ const DNAHelix = () => {
     renderer.setClearColor(0x000000, 0); 
     mount.appendChild(renderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // Dimmer ambient light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); 
     scene.add(ambientLight);
 
-    const mainLight = new THREE.DirectionalLight(0xffffff, 1.0); // Dimmer main light
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.0); 
     mainLight.position.set(10, 10, 20);
     scene.add(mainLight);
 
-    const instanceCount = 15000;
+    // Conditionally lower the particle count for mobile devices
+    const instanceCount = isMobile ? 5000 : 15000;
     const sphereGeometry = new THREE.SphereGeometry(0.09, 6, 6); 
     
-    // Updated material for a dull, lowkey, faded appearance
     const material = new THREE.MeshPhysicalMaterial({
-      color: 0x446677, // Muted starting color
-      emissive: 0x111122, // Very subtle dark glow
-      metalness: 0.1, // Removed metallic shine
-      roughness: 0.8, // Duller, less reflective surface
-      clearcoat: 0.05, // Almost no gloss
+      color: 0x446677, 
+      emissive: 0x111122, 
+      metalness: 0.1, 
+      roughness: 0.8, 
+      clearcoat: 0.05, 
       transparent: true,
-      opacity: 0.35, // Very faded and ghostly
+      opacity: 0.35, 
     });
 
     const instancedMesh = new THREE.InstancedMesh(sphereGeometry, material, instanceCount);
@@ -138,32 +147,30 @@ const DNAHelix = () => {
 
     window.addEventListener('mousemove', onMouseMove);
 
+    let animationId;
     const animate = () => {
-      requestAnimationFrame(animate);
-      instancedMesh.rotation.y += 0.002;
+      animationId = requestAnimationFrame(animate);
 
-      // Time-based shifting
-      const time = Date.now() * 0.0005;
-      
-      // Calculate the base hue (shifts between teals and purples)
-      const hue = 0.65 + Math.sin(time * 0.5) * 0.25; 
-      
-      // Apply FADED colors: setHSL(hue, saturation, lightness)
-      // Saturation is turned down to 0.25 to make it dull/greyish
-      material.color.setHSL(hue, 0.25, 0.35);
-      
-      // Keep the glowing emission extremely lowkey
-      material.emissive.setHSL(hue, 0.3, 0.5); 
+      // Only calculate and render frames if the user is on the Home page
+      if (activeRoute.current === '/') {
+        instancedMesh.rotation.y += 0.002;
 
-      const basePosX = isMobile ? 0 : 18;
-      const basePosY = isMobile ? 0 : 1;
-      const targetX = basePosX + mouse.current.x * 1.5; 
-      const targetY = basePosY + mouse.current.y * 1.5;
-      
-      instancedMesh.position.x += (targetX - instancedMesh.position.x) * 0.03;
-      instancedMesh.position.y += (targetY - instancedMesh.position.y) * 0.03;
+        const time = Date.now() * 0.0005;
+        const hue = 0.65 + Math.sin(time * 0.5) * 0.25; 
+        
+        material.color.setHSL(hue, 0.25, 0.35);
+        material.emissive.setHSL(hue, 0.3, 0.5); 
 
-      composer.render();
+        const basePosX = isMobile ? 0 : 18;
+        const basePosY = isMobile ? 0 : 1;
+        const targetX = basePosX + mouse.current.x * 1.5; 
+        const targetY = basePosY + mouse.current.y * 1.5;
+        
+        instancedMesh.position.x += (targetX - instancedMesh.position.x) * 0.03;
+        instancedMesh.position.y += (targetY - instancedMesh.position.y) * 0.03;
+
+        composer.render();
+      }
     };
 
     animate();
@@ -177,18 +184,39 @@ const DNAHelix = () => {
     };
 
     window.addEventListener('resize', handleResize);
+    
+    // Strict garbage collection cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(animationId);
+      
       if (mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
       }
+      
+      // Free WebGL memory
       sphereGeometry.dispose();
       material.dispose();
+      renderer.dispose();
+      renderTarget.dispose();
+      composer.dispose();
     };
   }, [isMobile]);
 
-  return <div ref={mountRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: 1, pointerEvents: 'none' }} />;
+    return (
+    <div 
+      ref={mountRef} 
+      style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        zIndex: 1, 
+        pointerEvents: 'none',
+        visibility: location.pathname === '/' ? 'visible' : 'hidden' 
+      }} 
+    />
+  );
 };
 
 export default DNAHelix;

@@ -1,11 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import Typewriter from './Typewriter';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 import './Home.css';
-
-// Lazy load the heavy 3D components
-const DNAHelix = lazy(() => import('./DNAHelix'));
-const FloatingPokemon = lazy(() => import('./FloatingPokemon'));
 
 function Home() {
   const humorousTexts = [
@@ -22,12 +18,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Suspense tells React what to show while the heavy 3D files are downloading */}
-      <Suspense fallback={<div style={{ position: 'absolute', zIndex: -1 }}></div>}>
-        <DNAHelix />
-        <FloatingPokemon />
-      </Suspense>
-      
       <div className="home-content">
         <ScrollAnimationWrapper animationClass="fade-in-up home-image-wrapper">
           <img src="/pictures/i.webp" alt="Jeffrey Chang" className="home-image" />
