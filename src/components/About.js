@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
 import './About.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function About() {
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
+  const toggleTerminal = () => {
+    setIsTerminalOpen(!isTerminalOpen);
+  };
+
   return (
     <div className="about-container">
       <ScrollAnimationWrapper animationClass="fade-in-up" delay={0}>
@@ -87,9 +93,36 @@ function About() {
                 <li>Standard Level: English, Spanish, History</li>
               </ul>
             </div>
+
+            {/* Trigger Button for the Terminal */}
+            <div className="telemetry-trigger-wrapper">
+              <button className="telemetry-trigger" onClick={toggleTerminal}>
+                <span className="prompt">&gt;</span> VIEW_TELEMETRY.LOG
+              </button>
+            </div>
           </section>
         </ScrollAnimationWrapper>
       </div>
+
+      {/* Terminal Modal Overlay */}
+      {isTerminalOpen && (
+        <div className="terminal-overlay" onClick={toggleTerminal}>
+          <div className="terminal-widget" onClick={(e) => e.stopPropagation()}>
+            <div className="terminal-bar">
+              <span>telemetry.log</span>
+              <div className="terminal-controls">
+                <span className="terminal-status">ONLINE</span>
+                <button className="terminal-close" onClick={toggleTerminal}>[X]</button>
+              </div>
+            </div>
+            <div className="terminal-body">
+              <p><span className="prompt">&gt;</span> CS2_PEAK: FACEIT LVL 8 / 21,566</p>
+              <p><span className="prompt">&gt;</span> CS_PEAK: LEM</p>
+              <p><span className="prompt">&gt;</span> OW2_PEAK: DIAMOND 1 [SUPPORT], EMERALD 5 [DPS]</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
