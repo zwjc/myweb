@@ -8,49 +8,49 @@ function Projects() {
       title: 'Smart City Strategy: Digital Twins',
       description: 'A 2050 strategic framework exploring the integration of IoT and Digital Twins for data-driven urban planning and cross-departmental governance.',
       tags: ['Strategy', 'IoT', 'Digital Twins'],
-      image: '/pictures/smartcity.jpeg',
+      image: '/pictures/smartcity.webp',
       link: 'https://kth-presentation.netlify.app/'
     },
     {
       title: 'Dynamic Web Application',
       description: 'Frontend development and interaction programming with React, integrating the ChatGPT and Pokémon APIs.',
       tags: ['React', 'APIs'],
-      image: '/pictures/project2.png',
+      image: '/pictures/project2.webp',
       link: 'https://pokeme-dh2642.web.app/'
     },
     {
       title: 'Unity3D Game Development',
       description: 'A football game with powerups, AI opponents and multiplayer functionality, built in Unity3D and C#.',
       tags: ['Unity3D', 'C#'],
-      image: '/pictures/project1.png',
+      image: '/pictures/project1.webp',
       link: 'https://noahpe0.wixsite.com/klantboll/game'
     },
     {
       title: 'Dinner Planner App',
       description: 'A hobby app for planning dinners, recipes and shopping lists, built with React Native and the MealDB API.',
       tags: ['React Native', 'Expo'],
-      image: '/pictures/project6.PNG',
+      image: '/pictures/project6.webp',
       link: 'https://github.com/zwjc/Expo'
     },
     {
       title: 'Bachelor Thesis Project',
       description: 'Comparative analysis of quantization algorithms for image classification, implementing and testing several models.',
       tags: ['ML', 'Research'],
-      image: '/pictures/project5copy.jpeg',
+      image: '/pictures/project5copy.webp',
       link: 'https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1887665&dswid=9194'
     },
     {
       title: 'E-Commerce Website',
       description: 'A full-stack store with authentication, product management and payment processing using React, Node.js and Supabase.',
       tags: ['Full-stack', 'Payments'],
-      image: '/pictures/project4.png',
+      image: '/pictures/project4.webp',
       link: 'https://homeearths.com/'
     },
     {
       title: 'Old and Current Website',
       description: 'This site and its predecessor, made for fun and personal use.',
       tags: ['React', 'Design'],
-      image: '/pictures/project3old.png',
+      image: '/pictures/project3old.webp',
       link: '#'
     }
   ];
