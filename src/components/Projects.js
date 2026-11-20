@@ -5,6 +5,14 @@ import './Projects.css';
 function Projects() {
   const projects = [
     {
+      title: 'Master\'s Thesis Project',
+      description: 'Analyzing the Planning Gap in Stockholm Sports Infrastructure Through Digital Twins.',
+      tags: ['Strategy', 'Research', 'Digital Twins'],
+      image: '/pictures/mex.jpg',
+      link: 'https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A2111878&dswid=-8898'
+    },
+    
+    {
       title: 'Smart City Strategy: Digital Twins',
       description: 'A 2050 strategic framework exploring the integration of IoT and Digital Twins for data-driven urban planning and cross-departmental governance.',
       tags: ['Strategy', 'IoT', 'Digital Twins'],
